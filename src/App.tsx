@@ -54,11 +54,8 @@ function App() {
       let arrTemp: string[] = temp;
       arrTemp.push(arrTemp.shift()!)
       if(songList.length > 0){
-        if(a < songList.length){
-          arrTemp[4] = songList[a++];
-        } else {
-          a = 0;
-        }
+        arrTemp[4] = songList[a];
+        a = (a + 1) % songList.length;
       }
       setTemp([...arrTemp]);
     }, 1000);
